@@ -5,7 +5,8 @@ const ejsLayouts = require('express-ejs-layouts');
 const fs = require('fs');
 app.set('view engine', 'ejs');
 app.use(express.static('static'))
-app.use(ejsLayouts)
+app.use(ejsLayouts);
+app.use(express.urlencoded({extended: false}))
 
 
 

@@ -1,23 +1,29 @@
 html, body {
     margin: 0;
     padding: 0;
+
+}
+
+body {
     text-align: center;
     display: flex;
-    flex-flow: column;
+    flex-direction: column;
     justify-content: center;
+    min-height: 100vh;
 }
 
 header {
     background-color: olivedrab;
+    align-items: flex-start;
 }
 
 footer {
     background-color: springgreen;
     color: aliceblue;
-    justify-content: flex-end;
+    flex: 1;
 }
 
 ul {
-    width: 40%;
+    width: 20%;
     margin: auto;
 }
