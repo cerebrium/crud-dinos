@@ -5,8 +5,9 @@ const fs = require('fs');
 
 // first get request for index option
 router.get(`/`, function(req, res) {
-    let dinos = fs.readFileSync(`./dinsaurs.json`)
-    console.log(dinos)
+    let dinos = fs.readFileSync(`./dinosaurs.json`)
+    let dinoData = JSON.parse(dinos)
+    res.json(dinos)
 });
 
 
