@@ -13,6 +13,7 @@ app.get(`/`, function(req, res) {
     res.send('root route')
 })
 
+app.use(`/dinosaurs`, require(`./routes/dinosaurs`))
 
 app.listen(3005, function() {
     console.log('server is running')
