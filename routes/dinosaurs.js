@@ -7,7 +7,7 @@ const fs = require('fs');
 router.get(`/`, function(req, res) {
     let dinos = fs.readFileSync(`./dinosaurs.json`)
     let dinoData = JSON.parse(dinos)
-    res.json(dinos)
+    res.render(`dinosaurs/index`, {dinos: dinoData})
 });
 
 

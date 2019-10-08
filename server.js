@@ -10,7 +10,7 @@ app.use(ejsLayouts)
 
 
 app.get(`/`, function(req, res) {
-    res.send('root route')
+    res.render(`home`)
 })
 
 app.use(`/dinosaurs`, require(`./routes/dinosaurs`))
