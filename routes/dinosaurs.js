@@ -10,6 +10,16 @@ router.get(`/`, function(req, res) {
     res.render(`dinosaurs/index`, {dinos: dinoData})
 });
 
+router.get(`/new`, function(req, res) {
+    res.render(`dinosaurs/new`)
+})
+
+router.get(`/:id`, function(req, res) {
+    let index = parseInt(req.params.id);
+    let dinos = fs.readFileSync(`./dinosaurs.json`);
+    let dinoData = JSON.parse(dinos);
+    res.render(`dinosaurs/show`, {dino: dinoData[index]})
+});
 
 
 

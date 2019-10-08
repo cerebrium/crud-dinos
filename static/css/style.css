@@ -1,0 +1,23 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+header {
+    background-color: olivedrab;
+}
+
+footer {
+    background-color: springgreen;
+    color: aliceblue;
+    justify-content: flex-end;
+}
+
+ul {
+    width: 40%;
+    margin: auto;
+}
