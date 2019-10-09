@@ -1,6 +1,10 @@
 <!-- named index since this in indexing -->
 <ul>
     <% dinos.forEach(function(ele, id) { %>
-        <li><a href="/dinosaurs/<%= id %>"><%= ele.name %></a> is a <%= ele.type %></li>
+        <li><a href="/dinosaurs/<%= id %>"><%= ele.name %></a> is a <%= ele.type %>
+        <form method='POST' action="/dinosaurs/<%= id %>/?_method=DELETE">
+            <input type="submit" value="x">    
+        </form>    
+        </li>
     <% }) %>
 </ul>

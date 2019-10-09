@@ -25,7 +25,38 @@ router.get(`/:id`, function(req, res) {
     let cryptidID = parseInt(req.params.id);
     let cryptidsJson = fs.readFileSync(`./cryptids.json`);
     let cryptidsData = JSON.parse(cryptidsJson);
-    res.render(`cryptids/show`, {crypt: cryptidsData[cryptidID]})
+    res.render(`cryptids/show`, {crypt: cryptidsData[cryptidID], cryptidIndex: cryptidID})
+})
+
+// show edit form
+router.get(`/edit/:id`, function(req, res) {
+    let cryptidID = parseInt(req.params.id);
+    let cryptidsJson = fs.readFileSync(`./cryptids.json`);
+    let cryptidsData = JSON.parse(cryptidsJson);
+
+    res.render(`cryptids/edit`, {crypt: cryptidsData[cryptidID], cryptidIndex: cryptidID})
+})
+
+// delete stuff
+router.delete(`/:id`, function(req, res) {
+    let cryptidID = parseInt(req.params.id);
+    let cryptidsJson = fs.readFileSync(`./cryptids.json`);
+    let cryptidsData = JSON.parse(cryptidsJson);
+
+
+    cryptidsData.splice(cryptidID, 1);
+    fs.writeFileSync(`./cryptids.json`, JSON.stringify(cryptidsData))
+    res.redirect('/cryptids')
+})
+
+// edit one dino
+router.put(`/:id`, function(req, res) {
+    let cryptidID = parseInt(req.params.id);
+    let cryptidsJson = fs.readFileSync(`./cryptids.json`);
+    let cryptidsData = JSON.parse(cryptidsJson);
+    cryptidsData[cryptidID] = req.body;
+    fs.writeFileSync(`./cryptids.json`, JSON.stringify(cryptidsData))
+    res.redirect(`/cryptids/${cryptidID}`)
 })
 
 

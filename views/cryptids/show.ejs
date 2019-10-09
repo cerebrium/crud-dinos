@@ -1,3 +1,5 @@
 <h1><%= crypt.name %></h1>
 <!-- need to set crypt.img_url to a variable -->
-<img src="<% if ( crypt.img_url != false) { %><%= crypt.img_url %><%} else { %> https://placedog.net/640/480?random" <% } %> alt="">
+<img src=<% if ( crypt.img_url == false) { %>"<%= crypt.img_url %>"<%} else { %> https://placedog.net/640/480?random <% } %> >
+
+<button id="editButton"><a href="/cryptids/edit/<%= cryptidIndex %>">Edit</a></button>

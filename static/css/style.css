@@ -27,3 +27,7 @@ ul {
     width: 20%;
     margin: auto;
 }
+
+a {
+    display: inline-block;
+}

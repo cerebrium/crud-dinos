@@ -1,5 +1,9 @@
 <ul>
     <% cryptid.forEach(function(ele, id) { %>
-        <li><a href="/cryptids/ <%= id%>"><%= ele.name %></a></li>
+        <li><a href="/cryptids/ <%= id%>"><%= ele.name %></a>
+        <form method='POST' action="/cryptids/<%= id %>/?_method=DELETE">
+            <input type="submit" value="DELETE">
+        </form>    
+        </li>
     <% }) %>
 </ul>
